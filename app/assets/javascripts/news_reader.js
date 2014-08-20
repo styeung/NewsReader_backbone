@@ -7,6 +7,7 @@ window.NewsReader = {
     console.log('Hello from Backbone!');
 
     NewsReader.feeds = new NewsReader.Collections.Feeds();
+    NewsReader.feeds.comparator = "updated_at";
     NewsReader.feeds.fetch();
 
     new NewsReader.Routers.Router({
