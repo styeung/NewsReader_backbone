@@ -21,7 +21,6 @@ NewsReader.Views.FeedShow = Backbone.View.extend({
 
     this.model.entries().each(function(entry) {
       $("ul#entries").append(that.entryTemplate({ entry: entry }));
-      $("#" + entry.id).append(that.htmlDecode(entry.html));
     });
 
     return this;
@@ -30,7 +29,7 @@ NewsReader.Views.FeedShow = Backbone.View.extend({
   refreshFeed: function() {
     this.model.fetch({
       success: this.render.bind(this)
-    })
+    });
   },
 
 
